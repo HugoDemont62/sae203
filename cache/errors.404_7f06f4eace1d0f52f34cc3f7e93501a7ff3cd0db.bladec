@@ -1,0 +1,12 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<div class="log">
+ <h1>404 Page introuvable</h1>
+ <?php if(isset($log)): ?>
+ <h2>Détail de l'erreur</h2>
+ <p><pre><?php echo $log; ?></pre></p>
+ <?php endif; ?>
+ </div>
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('templates.main'); } ?>

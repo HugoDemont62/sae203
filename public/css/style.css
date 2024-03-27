@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "CooperHewitt";
+    src: url("../fonts/CooperHewitt-Medium.otf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --light-color: hsla(46, 100%, 96%, 1);
+    --dark-color: hsla(197, 48%, 12%, 1);
+    --accent-color: hsla(340, 100%, 54%, 1);
+}
+
+body{
+    font-family:"CooperHewitt", Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--light-color);
+    background-color: var(--dark-color);
+
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    width:100%;
+    padding: 1rem 2rem;
+    margin-top: auto;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.logo{
+    height: 2em;
+}
+
+.log{
+    padding: 2em 3em;
+}
+
+.log p {
+    margin:1em;
+}
+
+#info {
+    font-size: 2rem;
+    padding: 1em 2em;
+    background-color: var(--accent-color);
+    text-align: center;
+}
