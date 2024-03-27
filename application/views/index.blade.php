@@ -12,7 +12,6 @@
     <input type="password" id="password" name="mot_de_passe"><br>
     <input type="submit" value="Se connecter">
   </form>
-  <!-- Ajout du bouton pour accéder à la page des étudiants -->
   <a href="index.php?page=etudiants" class="button">Voir les étudiants</a>
 </div>
 @endsection

@@ -18,9 +18,14 @@ function utilisateur($username, $password)
     $pdo = get_pdo();
     $sql = 'SELECT * FROM utilisateur WHERE nom = ? AND mot_de_passe = ?';
     $query = $pdo->prepare($sql);
+    $password = sha1($password);
     $query->execute([$username, $password]);
 
-    return $query->fetch();
-}
+    $user = $query->fetch();
 
-?>
+    if (!$user) {
+        throw new Exception('Erreur de connexion. Veuillez réessayer.');
+    }
+
+    return $user;
+}
