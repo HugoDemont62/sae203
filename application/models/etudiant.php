@@ -34,7 +34,7 @@ function etudiants_sans_stage()
 {
     $pdo = get_pdo();
     $sql = 'SELECT * FROM etudiant 
-            WHERE id NOT IN (SELECT idEtudiant FROM stages) 
+            WHERE id NOT IN (SELECT idEtudiant FROM stage) 
             ORDER BY nom, prenom';
     $query = $pdo->prepare($sql);
     $query->execute();

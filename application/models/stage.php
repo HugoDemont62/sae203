@@ -9,7 +9,7 @@ function all_stages()
     // Get the PDO object for database operations
     $pdo = get_pdo();
     // Prepare a SQL query to get all internships, including student and company information
-    $query = 'SELECT * FROM stages';
+    $query = 'SELECT * FROM stage';
     // Execute the SQL query
     $stmt = $pdo->query($query);
 
@@ -23,7 +23,7 @@ function get_stage_by_id($idStage)
     // Get the PDO object for database operations
     $pdo = get_pdo();
     // Prepare a SQL query to get an internship by its id
-    $query = 'SELECT * FROM stages WHERE id = ?';
+    $query = 'SELECT * FROM stage WHERE id = ?';
     // Prepare the SQL statement
     $stmt = $pdo->prepare($query);
     // Execute the SQL statement with the provided id
@@ -39,7 +39,7 @@ function get_stage_by_token($token)
     // Get the PDO object for database operations
     $pdo = get_pdo();
     // Prepare a SQL query to get an internship by its token
-    $query = 'SELECT * FROM stages WHERE token = ?';
+    $query = 'SELECT * FROM stage WHERE token = ?';
     // Prepare the SQL statement
     $stmt = $pdo->prepare($query);
     // Execute the SQL statement with the provided token
@@ -55,7 +55,7 @@ function get_etudiants_dans_meme_entreprise_by_token($token)
     // Get the PDO object for database operations
     $pdo = get_pdo();
     // Prepare a SQL query to get students doing an internship in the same company as the internship designated by the token
-    $query = 'SELECT etudiant.* FROM etudiant JOIN stages ON etudiant.id = stages.idEtudiant WHERE stages.token = ?';
+    $query = 'SELECT etudiant.* FROM etudiant JOIN stage ON etudiant.id = stage.idEtudiant WHERE stage.token = ?';
     // Prepare the SQL statement
     $stmt = $pdo->prepare($query);
     // Execute the SQL statement with the provided token
@@ -73,7 +73,7 @@ function creer_stage($idEtudiant, $idEntreprise, $debut, $fin, $soutenance, $mai
     // Generate a token for the new internship
     $token = generate_token(20);
     // Prepare a SQL query to insert a new internship into the database
-    $query = 'INSERT INTO stages (idEtudiant, idEntreprise, debut, fin, soutenance, maitre, mission, token) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    $query = 'INSERT INTO stage (idEtudiant, idEntreprise, debut, fin, soutenance, maitre, mission, token) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
     // Prepare the SQL statement
     $stmt = $pdo->prepare($query);
     // Execute the SQL statement with the provided data
@@ -91,7 +91,7 @@ function edit_stage($idStage, $idEtudiant, $idEntreprise, $debut, $fin, $soutena
     // Generate a new token for the edited internship
     $token = generate_token(20);
     // Prepare a SQL query to update an existing internship in the database
-    $query = 'UPDATE stages SET idEtudiant = ?, idEntreprise = ?, debut = ?, fin = ?, soutenance = ?, maitre = ?, mission = ?, token = ? WHERE id = ?';
+    $query = 'UPDATE stage SET idEtudiant = ?, idEntreprise = ?, debut = ?, fin = ?, soutenance = ?, maitre = ?, mission = ?, token = ? WHERE id = ?';
     // Prepare the SQL statement
     $stmt = $pdo->prepare($query);
     // Execute the SQL statement with the provided data
@@ -104,7 +104,7 @@ function supprime_stage($idStage)
     // Get the PDO object for database operations
     $pdo = get_pdo();
     // Prepare a SQL query to delete an existing internship from the database
-    $query = 'DELETE FROM stages WHERE id = ?';
+    $query = 'DELETE FROM stage WHERE id = ?';
     // Prepare the SQL statement
     $stmt = $pdo->prepare($query);
     // Execute the SQL statement with the provided id
