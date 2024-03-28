@@ -9,7 +9,7 @@ function all_stages()
     // Get the PDO object for database operations
     $pdo = get_pdo();
     // Prepare a SQL query to get all internships, including student and company information
-    $query = 'SELECT * FROM stages JOIN etudiant ON stages.idEtudiant = etudiant.id JOIN entreprise ON stages.idEntreprise = entreprise.id';
+    $query = 'SELECT * FROM stages';
     // Execute the SQL query
     $stmt = $pdo->query($query);
 
