@@ -33,6 +33,11 @@ function tous_etudiants()
 function etudiants_sans_stage()
 {
     $pdo = get_pdo();
+    $sql = 'SELECT * FROM etudiant 
+            WHERE id NOT IN (SELECT idEtudiant FROM stages) 
+            ORDER BY nom, prenom';
+    $query = $pdo->prepare($sql);
+    $query->execute();
 
-    return null;
+    return $query->fetchAll();
 }
