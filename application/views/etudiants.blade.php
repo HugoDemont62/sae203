@@ -8,6 +8,7 @@
             <th>Nom</th>
             <th>Prénom</th>
         </tr>
+        {{var_dump($etudiants)}}
         @foreach($etudiants as $etudiant)
             <tr>
                 <td>{{ $etudiant['nom'] }}</td>

@@ -1,4 +1,5 @@
 <?php
+
 require_once 'application/core/database.php';
 
 /* fonction toutes_entreprises 
@@ -10,12 +11,13 @@ require_once 'application/core/database.php';
  * Résultat :
  *   Un tableau de tableaux associatifs contenants tous les champs de la table entreprise
  * */
-function toutes_entreprises(){
-  $pdo = get_pdo();
+function toutes_entreprises()
+{
+    $pdo = get_pdo();
+    $query = "SELECT * FROM entreprise ORDER BY nom";
+    $stmt = $pdo->query($query);
 
-  return null;
+    return $stmt->fetchAll();
 }
-
-
 
 ?>
