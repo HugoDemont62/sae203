@@ -6,8 +6,6 @@
 <h2>Invitation:</h2>
 <a href="{{URL_PUBLIC}}invitation"><i class="bx bx-link"></i> Invitation</a>
 
-<h2>Students without internships:</h2>
-
 <h2>Create a new internship:</h2>
 <form action="index.php?action=creer_stage" method="post">
     @csrf
