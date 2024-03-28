@@ -1,19 +1,14 @@
 <?php
+require_once 'application/models/stage.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['idEtudiant'], $_POST['idEntreprise'], $_POST['debut'], $_POST['fin'], $_POST['soutenance'], $_POST['maitre'], $_POST['mission'])) {
-    // Get the parameters from the POST request
+var_dump($_POST);
+if (isset($_POST['idEtudiant'], $_POST['idEntreprise'], $_POST['dateDebut'], $_POST['dateFin'], $_POST['soutenance'], $_POST['maitre'], $_POST['description'])) {
     $idEtudiant = $_POST['idEtudiant'];
     $idEntreprise = $_POST['idEntreprise'];
-    $debut = $_POST['debut'];
-    $fin = $_POST['fin'];
+    $debut = $_POST['dateDebut'];
+    $fin = $_POST['dateFin'];
     $soutenance = $_POST['soutenance'];
     $maitre = $_POST['maitre'];
-    $mission = $_POST['mission'];
-
-    // Create a new internship
+    $mission = $_POST['description'];
     $idStage = creer_stage($idEtudiant, $idEntreprise, $debut, $fin, $soutenance, $maitre, $mission);
-
-    // Redirect the user to the creer_stage page
-    header('Location: index.php?page=creer_stage&idStage=' . $idStage);
-    exit;
 }

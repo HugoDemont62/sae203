@@ -21,4 +21,4 @@ add_action('login', ['nom' => POST, 'mot_de_passe' => POST]);
 add_page('liste');
 
 add_page('creer_stage');
-add_action('creer_stage', ['idEtudiant' => POST, 'idEntreprise' => POST, 'dateDebut' => POST, 'dateFin' => POST, 'description' => POST]);
+add_action('creer_stage', ['idEtudiant' => POST, 'idEntreprise' => POST, 'dateDebut' => POST, 'dateFin' => POST, 'description' => POST, 'soutenance' => POST, 'maitre' => POST]);
