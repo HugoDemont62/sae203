@@ -6,6 +6,10 @@
     <h2>Invitation:</h2>
     <a href="{{URL_PUBLIC}}invitation"><i class="bx bx-link"></i> Invitation</a>
 
+    <h2>delete intership</h2>
+    <a href="index.php?action=supprimer_stage&idStage={{ $stage['id'] }}">Delete Internship</a>
+
+
     <h2>Create a new internship:</h2>
     <form action="index.php?action=editer_stage" method="post">
         @csrf

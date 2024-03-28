@@ -14,4 +14,4 @@ $toutes_entreprises = toutes_entreprises();
 $idStage = isset($_GET['idStage']) ? $_GET['idStage'] : null;
 $stage = get_stage_by_id($idStage);
 
-echo $blade->run('editer_stage', ['etudiants' => $tous_etudiants, 'entreprises' => $toutes_entreprises, 'stage' => $stage]);
+echo $blade->run('editer_stage', ['etudiants' => $tous_etudiants, 'entreprises' => $toutes_entreprises, 'stage' => $stage, 'idStage' => $idStage]);

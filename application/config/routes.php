@@ -25,3 +25,5 @@ add_action('creer_stage', ['idEtudiant' => POST, 'idEntreprise' => POST, 'dateDe
 
 add_action('editer_stage', ['idEtudiant' => POST, 'idEntreprise' => POST, 'dateDebut' => POST, 'dateFin' => POST, 'description' => POST, 'soutenance' => POST, 'maitre' => POST]);
 add_page('editer_stage', ['idStage' => GET]);
+
+add_action('supprimer_stage', ['idStage' => GET]);

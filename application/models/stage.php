@@ -110,5 +110,3 @@ function supprime_stage($idStage)
     // Execute the SQL statement with the provided id
     $stmt->execute([$idStage]);
 }
-
-?>
